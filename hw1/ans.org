@@ -1,0 +1,29 @@
+#+TITLE: Assignment 1
+#+AUTHOR: Yusheng Zhao
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usepackage{amsthm}
+
+* Problem 1
+- Perhaps you had a typo, the crystal is $CaAl_{2}$
+- See file in the folder
+
+* Problem 2
+Using the notation that \(\mathbf{G} = \sum_{i=1}^{3} n_{i} \vec{a}_{i}}\) and
+\(\mathbf{R} = \sum_{i=1}^{3} m_{i} \vec{b}_{i}\), the periodic condition for
+lattice is
+
+\[ e^{i \mathbf{G} \cdot \mathbf{R}} = 1 \iff |\vec{a}_{i} \cdot \vec{b}_{j}| = 2\pi \delta_{ij}\]
+
+Using the geometrical fact that $\vec{v}_{ij} \equiv \vec{a}_{i} \times
+\vec{a}_{j}$ satisfies $\vec{v}_{ij} \perp \vec{a}_{i,j}$. And $\vec{x} \cdot
+\vec{y} = \vec{0}$ if $\vec{x} \perp \vec{y}$. Therefore \(\vec{a} \cdot
+(\vec{a} \times \vec{b}) = \vec{a} \cdot (\vec{b} \times \vec{a}) = 0\) We have
+
+\begin{align}
+    \vec{a}_{i} \cdot \vec{b}_{j} & = \vec{a}_{i} \cdot 2\pi \frac{\vec{a}_{k} \times \vec{a}_{l}}{\vec{a}_{j} \cdot \vec{a}_{k} \times \vec{a}_{l}} \\
+                                 & = \begin{cases}
+                                         0, & \text{if $i=k$ or $i=l$}. \\
+                                         2\pi, & \text{if $i = j$}.
+                                      \end{cases} \\
+                                 & = 2\pi \delta_{ij} \qed
+\end{align}
