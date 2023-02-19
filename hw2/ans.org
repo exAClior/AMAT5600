@@ -1,0 +1,23 @@
+#+TITLE: Homework 2 Answer
+#+AUTHOR: Yusheng Zhao
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usepackage{amsthm}
+
+
+* Problem 1
+#+CAPTION: Area enclosed in green is the first BZ
+[[./bz1st.png]]
+
+
+* Problem 2
+From \(S_{\bf{G}} \equiv \sum_{\text{atoms in unit cell}} f_{j}(\bf{G}) e^{i
+\bf{G}\cdot \bf{x}_{j}}\), and the question states that: \(\bf{G} = 0 \cdot
+\bf{b}_{1} + 0 \cdot \bf{b}_{2} + l \cdot \bf{b}_{3}\). Using \(\bf{b}_{i} \cdot
+\bf{a}_{j} = 2\pi \delta_{ij}\) We get
+
+\begin{align}
+S_{00l} & = f_{Ba} e^{i * 0} + f_{Ti} e^{i * 1/2 *l * \bf{b}_{3} \cdot \bf{a}_{3} } + f_{O}(e^{i * 0 } + e^{i * 1 / 2 * 0 * \bf{b}_{1} \cdot \bf{a}_{1} + i * 1 / 2 * l * \bf{b}_{3} \cdot \bf{a}_{3}} \\
+       &  + e^{i * 1 / 2 * 0 * \bf{b}_{2} \cdot \bf{a}_{2} + i * 1 / 2 * l * \bf{b}_{3} \cdot \bf{a}_{3}}) \\
+       & = f_{Ba} + (e^{i\pi})^{l} f_{Ti} + [1 + 2(e^{i\pi})^{l}] f_{O} \\
+       & = f_{Ba} + (-1)^{l}f_{Ti} + [1+2(-1)^{l}]f_{O} \qed
+\end{align}
