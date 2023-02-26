@@ -25,3 +25,20 @@ $\sum_{i} \vec{k}_{i}$ could take $\prod_{i}N_{i}$ different results which is
 also the number of lattice points in real space.
 
 * Problem 2
+Using \(f(\vec{r}) = f(\vec{r} + \vec{R})\), let's sum up and take average
+$f(\vec{r}+\vec{R})$ with $\vec{R}$ range from all lattice points in our
+crystal. It should be equal to $f(\vec{r})$.
+
+
+
+\begin{align*}
+f(\vec{r}) & = \frac{1}{N_{crystal}} \sum_{R\in\{\vec{R}\}} f(\vec{r}+\vec{R}) \\
+           & = \frac{1}{N_{crystal}} \sum_{R\in\{\vec{R}\}} V \int \frac{d\vec{k}}{(2\pi)^{3}} f_{\vec{k}} e^{i \vec{k}\cdot (\vec{r}+\vec{R})}\\
+           & = \frac{1}{N_{crystal}}  V \int \frac{d\vec{k}}{(2\pi)^{3}} f_{\vec{k}}  e^{i \vec{k} \cdot \vec{r}} \sum_{R\in\{\vec{R}\}} e^{ i (\vec{k} \cdot \vec{R})}\\
+           & = \frac{1}{N_{crystal}}  V \int \frac{d\vec{k}}{(2\pi)^{3}} f_{\vec{k}}  e^{i \vec{k}\cdot \vec{r}} \sum_{\vec{G}} \frac{(2\pi)^{3}}{v} \delta (\vec{k}-\vec{G})\\
+           & = \frac{1}{N_{crystal}}  V/v \sum_{\vec{G}} f_{\vec{G}} e^{i\vec{G}\cdot \vec{r}}\\
+           & = \sum_{\vec{G}} f_{\vec{G}} e^{i \vec{G} \cdot \vec{r}} \qed
+\end{align*}
+
+where we have used in the last line, $V = v * N_{crystal}$. The total volume of
+the crystal is the number of unit cells multiplied by the unit cell volume.

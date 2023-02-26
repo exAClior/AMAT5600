@@ -1,4 +1,4 @@
-% Created 2023-02-26 Sun 15:13
+% Created 2023-02-26 Sun 15:45
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -29,7 +29,7 @@
 
 
 \section{Problem 1}
-\label{sec:org0f74807}
+\label{sec:org602696d}
 Recall, Born-von Karman boundary condition, \(\psi(\vec{r}) =
 \psi(\vec{r}+n_{i}\vec{a}_{i})\). For momentum eigenstates, we need \(e^{i
 \vec{k}_{i}\cdot \delta \vec{r}_{i}} = 1\). Where we define \(\delta \vec{r}_{i}
@@ -50,5 +50,22 @@ The arguement above should be repeated in all three dimensions, in result
 also the number of lattice points in real space.
 
 \section{Problem 2}
-\label{sec:org5f4733b}
+\label{sec:orga628091}
+Using \(f(\vec{r}) = f(\vec{r} + \vec{R})\), let's sum up and take average
+\(f(\vec{r}+\vec{R})\) with \(\vec{R}\) range from all lattice points in our
+crystal. It should be equal to \(f(\vec{r})\).
+
+
+
+\begin{align*}
+f(\vec{r}) & = \frac{1}{N_{crystal}} \sum_{R\in\{\vec{R}\}} f(\vec{r}+\vec{R}) \\
+           & = \frac{1}{N_{crystal}} \sum_{R\in\{\vec{R}\}} V \int \frac{d\vec{k}}{(2\pi)^{3}} f_{\vec{k}} e^{i \vec{k}\cdot (\vec{r}+\vec{R})}\\
+           & = \frac{1}{N_{crystal}}  V \int \frac{d\vec{k}}{(2\pi)^{3}} f_{\vec{k}}  e^{i \vec{k} \cdot \vec{r}} \sum_{R\in\{\vec{R}\}} e^{ i (\vec{k} \cdot \vec{R})}\\
+           & = \frac{1}{N_{crystal}}  V \int \frac{d\vec{k}}{(2\pi)^{3}} f_{\vec{k}}  e^{i \vec{k}\cdot \vec{r}} \sum_{\vec{G}} \frac{(2\pi)^{3}}{v} \delta (\vec{k}-\vec{G})\\
+           & = \frac{1}{N_{crystal}}  V/v \sum_{\vec{G}} f_{\vec{G}} e^{i\vec{G}\cdot \vec{r}}\\
+           & = \sum_{\vec{G}} f_{\vec{G}} e^{i \vec{G} \cdot \vec{r}} \qed
+\end{align*}
+
+where we have used in the last line, \(V = v * N_{crystal}\). The total volume of
+the crystal is the number of unit cells multiplied by the unit cell volume.
 \end{document}
