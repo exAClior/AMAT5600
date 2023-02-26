@@ -1,0 +1,54 @@
+% Created 2023-02-26 Sun 15:13
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\author{Yusheng Zhao}
+\date{\today}
+\title{Homework 3 Answer}
+\hypersetup{
+ pdfauthor={Yusheng Zhao},
+ pdftitle={Homework 3 Answer},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.2 (Org mode 9.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+
+\section{Problem 1}
+\label{sec:org0f74807}
+Recall, Born-von Karman boundary condition, \(\psi(\vec{r}) =
+\psi(\vec{r}+n_{i}\vec{a}_{i})\). For momentum eigenstates, we need \(e^{i
+\vec{k}_{i}\cdot \delta \vec{r}_{i}} = 1\). Where we define \(\delta \vec{r}_{i}
+= n_{i} \vec{a}_{i}\) and \(n_{i} \in [1,N_{i}]\).
+
+To satisfy the condition, we need \((\vec{k}_{i} \cdot n_{i} \vec{a}_{i} ) =
+2\pi * m, \forall i \in \{x,y,z\}\), where \(\vec{k}_{i} = h_{i} \vec{b}_{i}\). And
+\(\vec{b}_{i}\), \(\vec{a}_{i}\) are basis vector in the momentum and real space
+respectively and \(m\) is an integer.
+
+Within the first Brillouin Zone, \(m=1\). We then have, \(\vec{k}_{i} \cdot
+\vec{a}_{i} = 2\pi /n_{i}\). Recall \(\vec{k}_{i}\) and \(\vec{a}_{i}\) are
+parallel. We see \(||\vec{k}_{i}|| = 2\pi /(||\vec{a}_{i}||n_{i})\) where \(n_{i}
+\in [1,N_{i}]\). We see now, \(\vec{k}_{i}\) could take \(N_{i}\) different values.
+
+The arguement above should be repeated in all three dimensions, in result
+\(\sum_{i} \vec{k}_{i}\) could take \(\prod_{i}N_{i}\) different results which is
+also the number of lattice points in real space.
+
+\section{Problem 2}
+\label{sec:org5f4733b}
+\end{document}
