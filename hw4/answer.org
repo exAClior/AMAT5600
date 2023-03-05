@@ -1,0 +1,44 @@
+#+TITLE: Homework 4
+#+AUTHOR: Yusheng Zhao
+#+LATEX_HEADER: \usepackage{amsthm}
+
+* Problem 1
+\begin{align}
+\psi_{k}(\vec{r}) & = \frac{1}{\sqrt{N}} \sum_{\vec{R}} e^{i\vec{k}\cdot\vec{R}} \phi_{s}(\vec{r} - \vec{R}) \\
+& = e^{i\vec{k}\cdot\vec{r}} \frac{1}{\sqrt{N}} \sum_{\vec{R}} e^{i\vec{k}\cdot(\vec{R}- \vec{r})} \phi_{s}(\vec{r} - \vec{R})
+\end{align}
+Next we only need to show \(\frac{1}{\sqrt{N}} \sum_{\vec{R}}
+e^{i\vec{k}\cdot(\vec{R}- \vec{r})} \phi_{s}(\vec{r} - \vec{R})\) is periodic in
+lattice vectors. Meaning that if we define \(u(\vec{r}) = \frac{1}{\sqrt{N}}
+\sum_{\vec{R}} e^{i\vec{k}\cdot(\vec{R}- \vec{r})} \phi_{s}(\vec{r} -
+\vec{R})\), we need to have \(u(\vec{r}) = u(\vec{r}+\vec{R'}\)
+
+\begin{align}
+& \frac{1}{\sqrt{N}} \sum_{\vec{R}} e^{i\vec{k}\cdot(\vec{R}- (\vec{r}+\vec{R'}))} \phi_{s}((\vec{r}+\vec{R'}) - \vec{R}) \\
+& = \frac{1}{\sqrt{N}} \sum_{\vec{R}} e^{i\vec{k}\cdot((\vec{R}- \vec{R'}) - \vec{r})} \phi_{s}(\vec{r}- (\vec{R} - \vec{R'})) \\
+& = \frac{1}{\sqrt{N}} \sum_{\vec{R''}} e^{i\vec{k}\cdot(\vec{R''}- \vec{r})} \phi_{s}(\vec{r}- \vec{R''}) \\
+& = \frac{1}{\sqrt{N}} \sum_{\vec{R}} e^{i\vec{k}\cdot(\vec{R}- \vec{r})} \phi_{s}(\vec{r}- \vec{R}) \qed
+\end{align}
+
+* Problem 2
+- Let's consider only the nearest neighbor hopping case, and make the strength
+  $\gamma = 1 eV$.
+- Let the lattice size be $a = 0.5$ angstrom.
+- Let's make \(\int \psi^{*}(x)H\psi(x)dx = \epsilon = 4 eV\)
+- \(E(k_{x},k_{y} = \epsilon + 2 * \gamma * (cos(k_{x} * a) + cos(k_{y}*a))\)
+#+begin_src julia
+using Plots
+a = 0.5
+ϵ = 4.0
+γ = 1.0
+kx = -π/0.5:0.01:π/0.5
+ky = -π/0.5:0.01:π/0.5
+E(kx,ky) = ϵ + 2.0 * γ * cos(kx*a) + 2.0 * γ * cos(ky*a)
+# plot(kx,ky,E,st=:surface,camera=(90,90);title="Dispersion Relation",label="E(kx,ky)")
+plot(kx,ky,E,st=:surface;title="Dispersion Relation",label="E(kx,ky)")
+xlabel!("kx 1/angstrom")
+ylabel!("ky 1/angstrom")
+zlabel!("Energy (eV)")
+#+end_src
+[[./topview.png]]
+[[./angle_view.png]]
