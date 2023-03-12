@@ -1,0 +1,37 @@
+#+TITLE: Final Essay Proposal
+#+AUTHOR: Yusheng Zhao
+
+
+The following content is generate by ChatGPT. The main gist of my final
+presentation is to extend/give an example of our learning on topological
+invariants. This is achieved by discussion of emergence of Majorana zero modes
+in superconducting systems. Specifically, the 1D toy model that is presented in
+this [[https://arxiv.org/pdf/1202.1293.pdf][paper.]]
+
+The emergence of Majorana fermions in superconducting systems is related to the
+concept of a topological invariant or topological number. A topological
+invariant is a quantity that characterizes the topological properties of a
+system and remains unchanged even under small perturbations. In the case of
+Majorana fermions, their existence is tied to a topological invariant known as
+the Chern number or the topological index.
+
+In 1D superconducting systems, the emergence of Majorana fermions is related to
+the topological invariant known as the winding number, which characterizes the
+topological properties of the system. The winding number describes how many
+times the superconducting phase changes around the wire, and it is related to
+the number of Majorana fermions that can emerge at the ends of the wire.
+Specifically, the number of Majorana fermions is equal to the absolute value of
+the winding number.
+
+In 2D superconducting systems, the emergence of Majorana fermions is related to
+the topological invariant known as the Chern number, which characterizes the
+topological properties of the system in terms of the curvature of the energy
+bands. The Chern number is related to the number of Majorana fermions that can
+form at the edge of the superconductor, and specifically, the number of Majorana
+modes is equal to the absolute value of the Chern number.
+
+The existence of Majorana fermions in superconducting systems is therefore
+closely tied to the topological properties of the system, as described by
+topological invariants such as the winding number and the Chern number. These
+topological invariants provide a robust and quantitative way to characterize the
+presence and properties of Majorana fermions in these systems.
