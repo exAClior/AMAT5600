@@ -1,0 +1,33 @@
+#+TITLE: Problem 6
+#+AUTHOR: Yusheng Zhao
+
+* Problem 1
+- Phase velocity is \(v_{p} = \frac{\omega}{k} = \sqrt{\frac{4C}{Mk^{2}}}|\sin(\frac{1}{2}ka)|\)
+- Group velocity is \(v_{g} = \frac{\partial \omega}{\partial k} = \pm \sqrt{\frac{4C}{M}}\frac{a}{2} \cos(\frac{1}{2}ka)\)
+
+  #+begin_src julia
+using Plots
+vp(k) = abs(sin(k/2))/k^2
+function vg(k)
+    res = cos(k)/2
+    if k > 0
+       return res
+    else
+       return -res
+    end
+end
+k = -π/2:0.001:π/2
+vps = vp.(k)
+vgs = vg.(k)
+# plot(k,vps;title="Phase Velocity")
+# savefig("phase.png")
+plot(k,vgs;title="Group Velocity")
+savefig("group.png")
+xlabel!("k 1/angstrom")
+ylabel!("velocity anstrom/sec")
+  #+end_src
+
+[[./phase.png]]
+[[./group.png]]
+
+* Problem 2
