@@ -1,0 +1,41 @@
+#+TITLE: HW 7
+#+AUTHOR: Yusheng Zhao
+
+* Problem 1
+Following Hook's Law, we have the next system of equation.
+
+\begin{equation}
+\begin{cases}
+M_{A} \frac{\partial u_{i}^{2}}{\partial t^{2}} = \lambda (w_{i-1} - u_{i})+ \lambda (v_{i}-u_{i}) \\
+M_{B} \frac{\partial v_{i}^{2}}{\partial t^{2}} = \lambda (w_{i} - v_{i}) + \lambda (u_{i}-v_{i}) \\
+M_{C} \frac{\partial w_{i}^{2}}{\partial t^{2}} = \lambda (v_{i} - w_{i}) + \lambda (u_{i+1}-w_{i})
+\end{cases}
+\end{equation}
+Due to periodicity of our system, we solve with ansatz \(u_{i} = A e^{i\omega t}
+e^{ik a}\), \(v_{i} = B e^{i\omega t} e^{ika}\) and, \(w_{i} = C e^{i\omega t}
+e^{ika}\). we have
+\begin{align}
+&\begin{cases}
+-M_{A} \omega^{2} u_{i} = \lambda (w_{i-1} - u_{i}) + \lambda (v_{i}-u_{i}) \\
+-M_{B} \omega^{2} v_{i} = \lambda (w_{i} - v_{i}) + \lambda (u_{i}-v_{i}) \\
+-M_{C} \omega^{2} w_{i} = \lambda (v_{i} - w_{i}) + \lambda (u_{i+1}-w_{i})
+\end{cases}\\
+&\begin{cases}
+-M_{A} \omega^{2} A = \lambda (C e^{-ika} - A) + \lambda (B-A) \\
+-M_{B} \omega^{2} B = \lambda (C - B) + \lambda (A-B) \\
+-M_{C} \omega^{2} C = \lambda (B - C) + \lambda (Ae^{ika}-C)
+\end{cases}\\
+&\begin{cases}
+-\frac{M_{A}}{\lambda} \omega^{2} A = (C e^{-ika} - A) + (B-A) \\
+-\frac{M_{B}}{\lambda} \omega^{2} B = (C - B) + (A-B) \\
+-\frac{M_{C}}{\lambda} \omega^{2} C = (B - C) + (Ae^{ika}-C)
+\end{cases}\\
+&\begin{pmatrix}
+\frac{M_{A}}{\lambda}\omega^{2} -2 & 1 & e^{-ika} \\
+1 & \frac{M_{B}}{\lambda}\omega^{2} - 2 & 1 \\
+e^{ika} & 1 & -\frac{M_{C}}{\lambda} \omega^{2} - 2
+\end{pmatrix}
+\begin{pmatrix}
+A \\ B \\ C
+\end{pmatrix} = \vec{0}
+\end{align}
