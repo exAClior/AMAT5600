@@ -1,0 +1,77 @@
+#+OPTIONS: toc:nil ^:nil tags:t f:t
+#+AUTHOR: Yusheng Zhao
+#+EMAIL: yushengzhao2020@outlook.com
+#+DATE: 2023-05-10
+#+TITLE: Topological Order and Noise
+#+SUBTITLE: Emergence of Majorana Zero Mode
+#+Description: AMAT 5600 Final Presentation
+#+BEAMER_THEME: Berlin
+#+BEAMER_FONT_THEME: professionalfonts
+#+startup: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation]
+#+LATEX_HEADER: \usepackage{braket}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{bbm}
+#+LATEX_HEADER: \setbeameroption{show notes}
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+
+* Motivation
+** Noise in Quantum Computer
+- Quantum Computing has advantage over Classical
+- Noise is the archenemy
+- Solution: store information *non-locally*
+- "If a physical system were to have quantum topological (necessarily nonlocal)
+  degrees of freedom, which were insensitive to local probes, then information
+  contained in them would be automatically protected against errors caused by
+  local interactions with the environment." - A. Kitaev
+** Note :B_note:
+:PROPERTIES:
+:BEAMER_env: note
+:beamer_opt: allowframebreaks
+:END:
+- Quantum Computers could solve some problems more efficiently compared to
+  classical computers. For example, Shor's algorithm is able to factor large
+  integers $N$, in \(\mathcal{O}(log(N)^{2}loglog(N)\) time. Meanwhile, the best
+  known classical algorithm is \(\mathcal{O}(e^{1.9
+  log(N)^{1/3}loglog(N)^{2/3}}\).
+- However, this technology is plagued by noise. Roughly speaking, noise is like
+  a little daemon who flips the abucus that you use to do calculation. The
+  source of those noise come from unwanted physical interaction. or even badly
+  calibrated actions.
+- For the purpose of this talk, we focus on unwanted physical interaciton.
+- This gives us an idea. Since all known physical interactions are local, could
+  be store our information non-locally to alleviate the effect of noise?
+
+* Emergence of Majorana Zero Mode
+
+** Kitaev's Toy Model
+
+** Topological Order
+- Where the hell did it emerge?
+
+* Take Home Message
+** Physics and Computation
+- "Information is Physical" - R. Landauer
+- Topological degree of freedom sees not local perturbation
+
+** Note :B_note:
+:PROPERTIES:
+:BEAMER_env: note
+:END:
+- Information is physical, meaning that the effecacy of the computation relies
+  very much so on the system that realizes it. Computation is not merely
+  something on the paper. It's very much so related to the physical world.
+- Topological degree of freedom is calculated from the system-wide point of
+  view. Therefore, it could not be probed locally hence it's immune to local
+  error.
+
+
+* Bibliography
+** References
+   :PROPERTIES:
+   :beamer_opt: allowframebreaks
+   :END:
+   bibliographystyle:apalike
+   [[bibliography:./finalp.bib][bibliography:./finalp.bib]]
