@@ -46,10 +46,24 @@
 
 * Emergence of Majorana Zero Mode
 
+** What is Majorana Femion
+- A particle that's its own particle
+- \(\gamma = \gamma^{\dagger}\)
+
+
+** Notes :B_note:
+:PROPERTIES:
+:BEAMER_env: note
+:END:
+- Why does dephasing correspond to
+  \(aa^{\dagger}\)[[cite:&huangIntroductionMajoranaZero2021]]
+
 ** Kitaev's Toy Model
 
 ** Topological Order
-- Where the hell did it emerge?
+- Reivew
+- How did it emerge
+
 
 * Take Home Message
 ** Physics and Computation

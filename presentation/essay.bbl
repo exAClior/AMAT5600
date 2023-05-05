@@ -1,0 +1,10 @@
+\begin{thebibliography}{}
+
+\bibitem[Sho, ]{ShorAlgorithm2023}
+Shor's algorithm.
+
+\bibitem[Girvin, ]{girvinIntroductionQuantumError2022}
+Girvin, S.~M.
+\newblock Introduction to {{Quantum Error Correction}} and {{Fault Tolerance}}.
+
+\end{thebibliography}

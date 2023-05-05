@@ -1,0 +1,75 @@
+% Created 2023-05-05 Fri 16:14
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Yusheng Zhao}
+\date{\today}
+\title{Physics and Computation}
+\hypersetup{
+ pdfauthor={Yusheng Zhao},
+ pdftitle={Physics and Computation},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.2 (Org mode 9.6.1)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{Disclaimer}
+\label{sec:orge7447df}
+Yes, chatgpt essay writing skill is a piece of shit. But I used it to proof-read
+and polish my essay.
+
+\section{Quantum Computation: A plagued technology}
+\label{sec:org89157d0}
+Quantum computers possess the capability to solve certain problems with greater
+efficiency than classical computers. Shor's algorithm, for instance, can factor
+large integers \(N\) in \(\mathcal{O}(log(N)^2 loglog(N))\) time, whereas the most
+efficient classical algorithm is \(\mathcal{O}(e^(1.9 log(N)^(1/3)
+loglog(N)^(2/3)))\) \cite{ShorAlgorithm2023}. Consequently, quantum computers have
+the potential to provide exponential speedup for factoring large integers.
+However, modern encryption techniques that rely on the difficulty of factoring
+integers are unlikely to be compromised anytime soon.
+
+One of the most significant challenges in quantum computing is noise. In
+essence, noise refers to a disruptive force that perturbs the qubits used for
+computation. It is analogous to a mischievous imp that upsets the abacus one
+uses for arithmetic operations. In other words, computation results from a noisy
+quantum computer are no longer precise. These noises arise from unwanted
+physical interactions between the qubits undergoing coherent evolution and their
+environment or poorly calibrated operations used for computation.
+
+Although techniques such as quantum error correction code can protect data in a
+fault-tolerant quantum memory, they rely on relatively good physical
+operations\cite{girvinIntroductionQuantumError2022}. Presently, our technology is
+still struggling to keep up. Consequently, there is a need to develop a
+naturally robust computing approach that is immune to unwanted interactions
+causing noise.
+
+\section{Topological Invariant: Physical Motivation}
+\label{sec:org666bd8e}
+As Rolf Landauer said, ``Information is Physical''. When we do computation, we
+first encode the information on physical systems and evolve those systems to
+carry out computation.
+
+\section{Majorana Zero Mode: Physical Realization}
+\label{sec:orgcc98196}
+
+\section{Bibliography}
+\label{sec:org079d476}
+\subsection{References}
+\label{sec:orgaa29ef4}
+\bibliographystyle{apalike}
+\bibliography{finalp}
+\end{document}
