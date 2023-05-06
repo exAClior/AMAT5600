@@ -25,11 +25,11 @@ physical interactions between the qubits undergoing coherent evolution and their
 environment or poorly calibrated operations used for computation.
 
 Although techniques such as quantum error correction code can protect data in a
-fault-tolerant quantum memory, they rely on relatively good physical
-operations[[cite:&girvinIntroductionQuantumError2022]]. Presently, our technology is
-still struggling to keep up. Consequently, there is a need to develop a
-naturally robust computing approach that is immune to unwanted interactions
-causing noise.
+fault-tolerant quantum memory, they rely on relatively good physical operations
+[[cite:&girvinIntroductionQuantumError2022]]. Presently, our technology is still
+struggling to keep up [[cite:&kitaevUnpairedMajoranaFermions2001]]. Consequently,
+there is a need to develop a naturally robust computing approach that is immune
+to unwanted interactions causing noise.
 
 * Topological Invariant: Physical Motivation
 As Rolf Landauer said, "Information is Physical". When we do computation, we
@@ -48,10 +48,20 @@ interactions. Recall our definition of topological invariant in class. It's
 defined as integral of over the entire surface. Hence, it's value is determined
 by not only locally what's the curvature but also the curvature globally.
 
+To be more concrete, say we put a two-dimensional system on a torus. The ground
+state of that 2D system will be degenerate. Nevertheless, we could not
+distinguish between the ground states by a local measurement due to the
+existence of a topological phase which also indicates the non-existence of a
+local order parameter. Hence, we could use these ground states as computational
+basis of quantum computation. Any local measurement cannot distinguish between
+the ground states. Therefore, they cannot decohere them. Making our information
+topologically protected.
+
 * Majorana Zero Mode: Physical Realization
 As an example of a physical system protected by topological invariant, we
 examine the toy model constructed by Alexi Kitaev in his seminal work. We notice
-that two "half" fermion emerge on the boundary of the $1D$ chain. ...
+that two "half" fermion emerge on the boundary of the $1D$ chain. ... This is
+exactly the topological
 
 * Bibliography
 ** References
