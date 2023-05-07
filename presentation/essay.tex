@@ -1,4 +1,4 @@
-% Created 2023-05-05 Fri 16:14
+% Created 2023-05-07 Sun 14:43
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -12,6 +12,7 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
+\usepackage{braket}
 \author{Yusheng Zhao}
 \date{\today}
 \title{Physics and Computation}
@@ -27,20 +28,20 @@
 \maketitle
 
 \section{Disclaimer}
-\label{sec:orge7447df}
-Yes, chatgpt essay writing skill is a piece of shit. But I used it to proof-read
-and polish my essay.
+\label{sec:orgaecc385}
+Yes, chatgpt is good at spitting out nonsense. But I used it to proof-read and
+polish my essay.
 
 \section{Quantum Computation: A plagued technology}
-\label{sec:org89157d0}
+\label{sec:orga2439d9}
 Quantum computers possess the capability to solve certain problems with greater
 efficiency than classical computers. Shor's algorithm, for instance, can factor
 large integers \(N\) in \(\mathcal{O}(log(N)^2 loglog(N))\) time, whereas the most
 efficient classical algorithm is \(\mathcal{O}(e^(1.9 log(N)^(1/3)
-loglog(N)^(2/3)))\) \cite{ShorAlgorithm2023}. Consequently, quantum computers have
-the potential to provide exponential speedup for factoring large integers.
-However, modern encryption techniques that rely on the difficulty of factoring
-integers are unlikely to be compromised anytime soon.
+loglog(N)^(2/3)))\)\cite{ShorAlgorithm2023}. Consequently, quantum computers have the potential to
+provide exponential speedup for factoring large integers. However, modern
+encryption techniques that rely on the difficulty of factoring integers are
+unlikely to be compromised anytime soon.
 
 One of the most significant challenges in quantum computing is noise. In
 essence, noise refers to a disruptive force that perturbs the qubits used for
@@ -52,24 +53,76 @@ environment or poorly calibrated operations used for computation.
 
 Although techniques such as quantum error correction code can protect data in a
 fault-tolerant quantum memory, they rely on relatively good physical
-operations\cite{girvinIntroductionQuantumError2022}. Presently, our technology is
-still struggling to keep up. Consequently, there is a need to develop a
-naturally robust computing approach that is immune to unwanted interactions
-causing noise.
+operation\cite{girvinIntroductionQuantumError2022}. Presently, our technology is
+still struggling to keep up\cite{kitaevUnpairedMajoranaFermions2001}.
+Consequently, there is a need to develop a naturally robust computing approach
+that is immune to unwanted interactions causing noise.
 
-\section{Topological Invariant: Physical Motivation}
-\label{sec:org666bd8e}
-As Rolf Landauer said, ``Information is Physical''. When we do computation, we
-first encode the information on physical systems and evolve those systems to
-carry out computation.
+\section{Topology: A Global Picture}
+\label{sec:orgadefa82}
+As Rolf Landauer famously stated, ``Information is
+Physical.'' \cite{landauerThereAreNo1991} When performing computations, we must
+first encode information onto physical systems and evolve those systems to carry
+out the necessary computations. If we could identify a physical system that is
+inherently resistant to noise and encode information onto it, we would be able
+to construct a naturally fault-tolerant quantum computer. Furthremore, current
+knowledge suggests that all physical interactions are local. Therefore, if we
+could identify a system that is immune to local interactions, we could construct
+a decoherence immune qubit.
+
+Recall our definition of a topological invariant, as previously defined in
+class. Both the Gauss-Bonnet theorem and the calculation of the Berry phase
+require an integral over the entire system. Local information alone is
+insufficient to determine the topological invariants of a system. Similarly, if
+one has the ability to alter a system locally, they cannot alter the topological
+invariant number of that system.
+
+Using this as a guide, we turn our attention to topological systems. In the
+limit of large system size, a topologically non-trivial phase can emerge from a
+gapped quantum many-body system. One key feature of the non-trivial phase is
+that it possesses topologically degenerate ground states that are not degenerate
+in the topologically trivial phase. Therefore, the degeneracy of the ground
+states is a direct consequence of the topology of the system's phase. Applying
+the logic from the previous paragraph, we expect these ground states to be
+protected from local noise, meaning decoherence should not affect them.
+
+In conclusion, we can encode information onto these ground states and expect
+this encoding to be immune to decoherence. This insight offers a promising
+avenue for constructing a fault-tolerant quantum computer by leveraging the
+properties of topological systems.
 
 \section{Majorana Zero Mode: Physical Realization}
-\label{sec:orgcc98196}
+\label{sec:org89146da}
+As an illustration, Alexi Kitaev proposed a one-dimensional chain of fermions in
+which the spin is disregarded \cite{kitaevUnpairedMajoranaFermions2001}. The
+Hamiltonian of the chain is given by \(H = \sum_{n=1}^{N} [- \mu
+(a^{\dagger}_{n}a_{n}- \frac{1}{2}) - w (a^{\dagger}_{n}a_{n+1} +
+a^{\dagger}_{n+1}a_{n}) + \Delta a_{n}a_{n+1} +
+\Delta^{*}a^{\dagger}_{n+1}a^{\dagger}_{n})]\), where Kitaev discovered that
+when \(|\Delta| = w > 0\), the system is in a topologically non-trivial
+phase \cite{aliceaNewDirectionsPursuit2012}. The degenerate ground state can be
+obtained through the following transformation, where \(\theta\) is the
+superconducting phase and \(\gamma\) is the Majorana operator: \(a_{n} =
+\frac{1}{2}(e^{-i \theta /2}\gamma_{2n} + e^{i\theta/2}\gamma_{2n-1})\) and
+\(a^{\dagger}_{n} = \frac{1}{2}(e^{i\theta/2}\gamma_{2n} -
+e^{-i\theta/2}\gamma_{2n-1})\). This transformation leads to the Hamiltonian \(H
+= - i w \sum_{n=1}^{N-1}\gamma_{2n}\gamma_{2n+1}\), which can be easily
+diagonalized to obtain its eigenstates by introducing new fermionic operators
+\(\tilde{a}_{n} = (\gamma_{2n}-i\gamma_{2n+1})/2\). It can be observed that \(H
+= 2w \sum_{n=1}^{N-1}(\tilde{a}^{\dagger}_{n}\tilde{a}_{n}
+-1/2)\) \cite{huangIntroductionMajoranaZero2021}. As \(\gamma_1\) and \(\gamma_{2N}\)
+do not exist in the Hamiltonian, they commute and have zero energy. Excitation
+modes of these creation operators correspond to Majorana modes with zero energy,
+hence the name ``Majorana zero mode''. The two Majorana modes can be combined into
+one fermionic mode by \(\tilde{a}_0 = (\gamma_1 + i \gamma_{2N}) /2\). The
+\(\ket{0}\) and \(\ket{1}\) states with respect to such fermionic excitation have
+degenerate energy but are topologically protected. Therefore, they can be used
+to encode decoherence-free qubits.
 
 \section{Bibliography}
-\label{sec:org079d476}
+\label{sec:org456ef45}
 \subsection{References}
-\label{sec:orgaa29ef4}
+\label{sec:orgfa8b0e2}
 \bibliographystyle{apalike}
 \bibliography{finalp}
 \end{document}

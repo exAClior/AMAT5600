@@ -44,31 +44,72 @@
 - This gives us an idea. Since all known physical interactions are local, could
   be store our information non-locally to alleviate the effect of noise?
 
-* Emergence of Majorana Zero Mode
+* Topological Protection
 
-** What is Majorana Femion
-- A particle that's its own particle
-- \(\gamma = \gamma^{\dagger}\)
+** Topological Invariant
+[[./TopoInvariant.png]] [Prof. Li Slides]
 
-
-** Notes :B_note:
+** Note :B_note:
 :PROPERTIES:
 :BEAMER_env: note
 :END:
-- Why does dephasing correspond to
-  \(aa^{\dagger}\)[[cite:&huangIntroductionMajoranaZero2021]]
+- Recall our definition of a topological invariant, as previously defined in
+  class. Both the Gauss-Bonnet theorem and the calculation of the Berry phase
+  require an integral over the entire system. Local information alone is
+  insufficient to determine the topological invariants of a system. Similarly,
+  if one has the ability to alter a system locally, they cannot alter the
+  topological invariant number of that system.
 
-** Kitaev's Toy Model
+** Topological Degeneracy
+- Arises from topologically non-trivial phase
+- Protected from local perturbation
 
-** Topological Order
-- Reivew
-- How did it emerge
+** Note :B_note:
+:PROPERTIES:
+:BEAMER_env: note
+:END:
+- Using this as a guide, we turn our attention to topological systems. In the
+  limit of large system size, a topologically non-trivial phase can emerge from
+  a gapped quantum many-body system. One key feature of the non-trivial phase is
+  that it possesses topologically degenerate ground states that are not
+  degenerate in the topologically trivial phase. Therefore, the degeneracy of
+  the ground states is a direct consequence of the topology of the system's
+  phase. Applying the logic from the previous paragraph, we expect these ground
+  states to be protected from local noise, meaning decoherence should not affect
+  them.
 
+* Kitaev's Toy Model
+** Hamiltonian [[cite:&kitaevUnpairedMajoranaFermions2001]]
+- \(H = \sum_{n=1}^{N} [- \mu (a^{\dagger}_{n}a_{n}- \frac{1}{2}) - w
+  (a^{\dagger}_{n}a_{n+1} + a^{\dagger}_{n+1}a_{n}) + \Delta a_{n}a_{n+1} +
+  \Delta^{*}a^{\dagger}_{n+1}a^{\dagger}_{n})]\)
+
+** Emergence of Non-trivial Phase [[cite:&huangIntroductionMajoranaZero2021]]
+- \( |\Delta| = w > 0\)
+- \(a_{n} = \frac{1}{2}(e^{-i \theta /2}\gamma_{2n} +
+  e^{i\theta/2}\gamma_{2n-1})\), $\gamma$ is the Majorana creation/anhilation operator
+- \(a^{\dagger}_{n} = \frac{1}{2}(e^{i\theta/2}\gamma_{2n} -
+  e^{-i\theta/2}\gamma_{2n-1})\)
+- \(\tilde{a}_{n} = (\gamma_{2n}-i\gamma_{2n+1})/2\)
+- \(H = 2w \sum_{n=1}^{N-1}(\tilde{a}^{\dagger}_{n}\tilde{a}_{n} -1/2)\)
+
+** A picture is worth a thousand words
+[[./two-phases.png]]
+
+** Note :B_note:
+:PROPERTIES:
+:BEAMER_env: note
+:END:
+- Note, $\gamma_1$ and $\gamma_{2N}$ are not in Hamiltonian
+- Have zero energy.
+- Combine to make fermonic mode \(\tilde{a}_{0} =(\gamma_{1}+i\gamma_{2N})/2\)
+- $\ket{0}$ and $\ket{1}$ of above creation operator have degenerate energy.
+- Also protected by topology. Can be made into protected qubits!
 
 * Take Home Message
 ** Physics and Computation
-- "Information is Physical" - R. Landauer
-- Topological degree of freedom sees not local perturbation
+- "Information is Physical" [[cite:&landauerThereAreNo1991]]
+- Topologically degenerate degree of freedom sees not local perturbation
 
 ** Note :B_note:
 :PROPERTIES:

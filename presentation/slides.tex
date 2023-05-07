@@ -1,4 +1,4 @@
-% Created 2023-05-01 Mon 22:07
+% Created 2023-05-07 Sun 15:11
 % Intended LaTeX compiler: pdflatex
 \documentclass[presentation]{beamer}
 \usepackage[utf8]{inputenc}
@@ -38,8 +38,8 @@
 
 
 \section{Motivation}
-\label{sec:orgc9fb8d5}
-\begin{frame}[label={sec:org0d383f2}]{Noise in Quantum Computer}
+\label{sec:org35a95c8}
+\begin{frame}[label={sec:orgb9c9ff7}]{Noise in Quantum Computer}
 \begin{itemize}
 \item Quantum Computing has advantage over Classical
 \item Noise is the archenemy
@@ -66,24 +66,88 @@ calibrated actions.
 be store our information non-locally to alleviate the effect of noise?
 \end{itemize}}
 
-\section{Emergence of Majorana Zero Mode}
-\label{sec:org18c5f16}
+\section{Topological Protection}
+\label{sec:orgf7828b3}
 
-\begin{frame}[label={sec:org5d03911}]{Kitaev's Toy Model}
+\begin{frame}[label={sec:org339f94b}]{Topological Invariant}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./TopoInvariant.png}
+\end{center} [Prof. Li Slides]
 \end{frame}
 
-\begin{frame}[label={sec:orgea69135}]{Topological Order}
+\note{Note
 \begin{itemize}
-\item Where the hell did it emerge?
+\item Recall our definition of a topological invariant, as previously defined in
+class. Both the Gauss-Bonnet theorem and the calculation of the Berry phase
+require an integral over the entire system. Local information alone is
+insufficient to determine the topological invariants of a system. Similarly,
+if one has the ability to alter a system locally, they cannot alter the
+topological invariant number of that system.
+\end{itemize}}
+
+\begin{frame}[label={sec:orgfe83453}]{Topological Degeneracy}
+\begin{itemize}
+\item Arises from topologically non-trivial phase
+\item Protected from local perturbation
 \end{itemize}
 \end{frame}
 
-\section{Take Home Message}
-\label{sec:org31d406f}
-\begin{frame}[label={sec:org722364f}]{Physics and Computation}
+\note{Note
 \begin{itemize}
-\item ``Information is Physical'' - R. Landauer
-\item Topological degree of freedom sees not local perturbation
+\item Using this as a guide, we turn our attention to topological systems. In the
+limit of large system size, a topologically non-trivial phase can emerge from
+a gapped quantum many-body system. One key feature of the non-trivial phase is
+that it possesses topologically degenerate ground states that are not
+degenerate in the topologically trivial phase. Therefore, the degeneracy of
+the ground states is a direct consequence of the topology of the system's
+phase. Applying the logic from the previous paragraph, we expect these ground
+states to be protected from local noise, meaning decoherence should not affect
+them.
+\end{itemize}}
+
+\section{Kitaev's Toy Model}
+\label{sec:org494bbcc}
+\begin{frame}[label={sec:orgb494ae1}]{Hamiltonian \cite{kitaevUnpairedMajoranaFermions2001}}
+\begin{itemize}
+\item \(H = \sum_{n=1}^{N} [- \mu (a^{\dagger}_{n}a_{n}- \frac{1}{2}) - w
+  (a^{\dagger}_{n}a_{n+1} + a^{\dagger}_{n+1}a_{n}) + \Delta a_{n}a_{n+1} +
+  \Delta^{*}a^{\dagger}_{n+1}a^{\dagger}_{n})]\)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org5f9005a}]{Emergence of Non-trivial Phase \cite{huangIntroductionMajoranaZero2021}}
+\begin{itemize}
+\item \(|\Delta| = w > 0\)
+\item \(a_{n} = \frac{1}{2}(e^{-i \theta /2}\gamma_{2n} +
+  e^{i\theta/2}\gamma_{2n-1})\), \(\gamma\) is the Majorana creation/anhilation operator
+\item \(a^{\dagger}_{n} = \frac{1}{2}(e^{i\theta/2}\gamma_{2n} -
+  e^{-i\theta/2}\gamma_{2n-1})\)
+\item \(\tilde{a}_{n} = (\gamma_{2n}-i\gamma_{2n+1})/2\)
+\item \(H = 2w \sum_{n=1}^{N-1}(\tilde{a}^{\dagger}_{n}\tilde{a}_{n} -1/2)\)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org4126ad6}]{A picture is worth a thousand words}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./two-phases.png}
+\end{center}
+\end{frame}
+
+\note{Note
+\begin{itemize}
+\item Note, \(\gamma_1\) and \(\gamma_{2N}\) are not in Hamiltonian
+\item Have zero energy.
+\item Combine to make fermonic mode \(\tilde{a}_{0} =(\gamma_{1}+i\gamma_{2N})/2\)
+\item \(\ket{0}\) and \(\ket{1}\) of above creation operator have degenerate energy.
+\item Also protected by topology. Can be made into protected qubits!
+\end{itemize}}
+
+\section{Take Home Message}
+\label{sec:org787ec59}
+\begin{frame}[label={sec:org222afca}]{Physics and Computation}
+\begin{itemize}
+\item ``Information is Physical'' \cite{landauerThereAreNo1991}
+\item Topologically degenerate degree of freedom sees not local perturbation
 \end{itemize}
 \end{frame}
 
@@ -99,7 +163,7 @@ error.
 
 
 \section{Bibliography}
-\label{sec:orgfdbd893}
+\label{sec:org72cdbc4}
 \begin{frame}[allowframebreaks]{References}
 \bibliographystyle{apalike}
 \bibliography{finalp}

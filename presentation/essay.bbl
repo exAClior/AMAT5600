@@ -3,8 +3,30 @@
 \bibitem[Sho, ]{ShorAlgorithm2023}
 Shor's algorithm.
 
+\bibitem[Alicea, ]{aliceaNewDirectionsPursuit2012}
+Alicea, J.
+\newblock New directions in the pursuit of {{Majorana}} fermions in solid state
+  systems.
+\newblock 75(7):076501.
+
 \bibitem[Girvin, ]{girvinIntroductionQuantumError2022}
 Girvin, S.~M.
 \newblock Introduction to {{Quantum Error Correction}} and {{Fault Tolerance}}.
+
+\bibitem[Huang, ]{huangIntroductionMajoranaZero2021}
+Huang, S.
+\newblock Introduction to {{Majorana Zero Modes}} in a {{Kitaev Chain}}.
+
+\bibitem[Kitaev, ]{kitaevUnpairedMajoranaFermions2001}
+Kitaev, A.
+\newblock Unpaired {{Majorana}} fermions in quantum wires.
+\newblock 44:131--136.
+
+\bibitem[Landauer, ]{landauerThereAreNo1991}
+Landauer, R.
+\newblock There are no unavoidable energy consumption requirements per step in
+  a computer. {{Related}} analysis has provided insights into the measurement
+  process and the communications channel, and has prompted speculations about
+  the nature of physical laws.
 
 \end{thebibliography}
