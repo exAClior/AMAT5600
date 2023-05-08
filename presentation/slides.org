@@ -19,9 +19,21 @@
 
 * Motivation
 ** What's Quantum Computer
-- \(\ket{\psi} = \alpha \ket{0} + e^{i\theta} \beta \ket{1} \)
-- Gates are unitary (hence reversible)
+- Information encoded on a qubit: \(\ket{\psi} = \alpha \ket{0} + e^{i\theta}
+  \beta \ket{1} \)
+- Operations(gates) are unitary (hence reversible)
 - Quantum Computing has advantage over Classical
+
+** Note :B_note:
+:PROPERTIES:
+:BEAMER_env: note
+:END:
+
+- Quantum Computers could solve some problems more efficiently compared to
+  classical computers. For example, Shor's algorithm is able to factor large
+  integers $N$, in \(\mathcal{O}(log(N)^{2}loglog(N)\) time. Meanwhile, the best
+  known classical algorithm is \(\mathcal{O}(e^{1.9
+  log(N)^{1/3}loglog(N)^{2/3}}\).
 
 ** Noise in Quantum Computer
 - Noise is the archenemy
@@ -38,11 +50,6 @@
 :BEAMER_env: note
 :beamer_opt: allowframebreaks
 :END:
-- Quantum Computers could solve some problems more efficiently compared to
-  classical computers. For example, Shor's algorithm is able to factor large
-  integers $N$, in \(\mathcal{O}(log(N)^{2}loglog(N)\) time. Meanwhile, the best
-  known classical algorithm is \(\mathcal{O}(e^{1.9
-  log(N)^{1/3}loglog(N)^{2/3}}\).
 - However, this technology is plagued by noise. Roughly speaking, noise is like
   a little daemon who flips the abucus that you use to do calculation. The
   source of those noise come from unwanted physical interaction. or even badly

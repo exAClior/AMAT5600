@@ -1,4 +1,4 @@
-% Created 2023-05-08 Mon 18:17
+% Created 2023-05-08 Mon 18:21
 % Intended LaTeX compiler: pdflatex
 \documentclass[presentation]{beamer}
 \usepackage[utf8]{inputenc}
@@ -38,23 +38,33 @@
 
 
 \section{Motivation}
-\label{sec:org69a3b2c}
-\begin{frame}[label={sec:org0196451}]{What's Quantum Computer}
+\label{sec:org7a7ca73}
+\begin{frame}[label={sec:org2a5cad1}]{What's Quantum Computer}
 \begin{itemize}
-\item \(\ket{\psi} = \alpha \ket{0} + e^{i\theta} \beta \ket{1}\)
-\item Gates are unitary (hence reversible)
+\item Information encoded on a qubit: \(\ket{\psi} = \alpha \ket{0} + e^{i\theta}
+  \beta \ket{1}\)
+\item Operations(gates) are unitary (hence reversible)
 \item Quantum Computing has advantage over Classical
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org83c0e10}]{Noise in Quantum Computer}
+\note{Note
+\begin{itemize}
+\item Quantum Computers could solve some problems more efficiently compared to
+classical computers. For example, Shor's algorithm is able to factor large
+integers \(N\), in \(\mathcal{O}(log(N)^{2}loglog(N)\) time. Meanwhile, the best
+known classical algorithm is \(\mathcal{O}(e^{1.9
+  log(N)^{1/3}loglog(N)^{2/3}}\).
+\end{itemize}}
+
+\begin{frame}[label={sec:org45cc246}]{Noise in Quantum Computer}
 \begin{itemize}
 \item Noise is the archenemy
 \item Noise is from unwanted local perturbation
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org8dc153a}]{Solution}
+\begin{frame}[label={sec:org11148c2}]{Solution}
 \begin{itemize}
 \item Store information \alert{non-locally}
 \item ``If a physical system were to have quantum topological (necessarily nonlocal)
@@ -65,11 +75,6 @@ local interactions with the environment.'' - A. Kitaev
 \end{frame}
 \note{Note
 \begin{itemize}
-\item Quantum Computers could solve some problems more efficiently compared to
-classical computers. For example, Shor's algorithm is able to factor large
-integers \(N\), in \(\mathcal{O}(log(N)^{2}loglog(N)\) time. Meanwhile, the best
-known classical algorithm is \(\mathcal{O}(e^{1.9
-  log(N)^{1/3}loglog(N)^{2/3}}\).
 \item However, this technology is plagued by noise. Roughly speaking, noise is like
 a little daemon who flips the abucus that you use to do calculation. The
 source of those noise come from unwanted physical interaction. or even badly
@@ -80,9 +85,9 @@ be store our information non-locally to alleviate the effect of noise?
 \end{itemize}}
 
 \section{Topological Protection}
-\label{sec:org6948446}
+\label{sec:org9e028e3}
 
-\begin{frame}[label={sec:orgc789b92}]{Topological Invariant}
+\begin{frame}[label={sec:org3a047e8}]{Topological Invariant}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./TopoInvariant.png}
 \end{center} [Prof. Li Slides]
@@ -98,7 +103,7 @@ if one has the ability to alter a system locally, they cannot alter the
 topological invariant number of that system.
 \end{itemize}}
 
-\begin{frame}[label={sec:org06ffd09}]{Topological Degeneracy}
+\begin{frame}[label={sec:org6b31504}]{Topological Degeneracy}
 \begin{itemize}
 \item Arises from topologically non-trivial phase
 \item Protected from local perturbation
@@ -119,8 +124,8 @@ them.
 \end{itemize}}
 
 \section{Kitaev's Toy Model}
-\label{sec:orgab5d7b8}
-\begin{frame}[label={sec:orgbfee828}]{Hamiltonian \cite{kitaevUnpairedMajoranaFermions2001}}
+\label{sec:org5bca09c}
+\begin{frame}[label={sec:org87dcd0e}]{Hamiltonian \cite{kitaevUnpairedMajoranaFermions2001}}
 \begin{itemize}
 \item \(H = \sum_{n=1}^{N} [- \mu (a^{\dagger}_{n}a_{n}- \frac{1}{2}) - w
   (a^{\dagger}_{n}a_{n+1} + a^{\dagger}_{n+1}a_{n}) + \Delta a_{n}a_{n+1} +
@@ -128,7 +133,7 @@ them.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org94a9933}]{Emergence of Non-trivial Phase \cite{huangIntroductionMajoranaZero2021}}
+\begin{frame}[label={sec:orgc860112}]{Emergence of Non-trivial Phase \cite{huangIntroductionMajoranaZero2021}}
 \begin{itemize}
 \item \(|\Delta| = w > 0\)
 \item \(a_{n} = \frac{1}{2}(e^{-i \theta /2}\gamma_{2n} +
@@ -140,7 +145,7 @@ them.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org0b8bdaa}]{A picture is worth a thousand words}
+\begin{frame}[label={sec:orgebebd8d}]{A picture is worth a thousand words}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./two-phases.png}
 \end{center}
@@ -156,8 +161,8 @@ them.
 \end{itemize}}
 
 \section{Take Home Message}
-\label{sec:orgc40ae88}
-\begin{frame}[label={sec:org0454321}]{Physics and Computation}
+\label{sec:orgdc80415}
+\begin{frame}[label={sec:orgb3dc503}]{Physics and Computation}
 \begin{itemize}
 \item ``Information is Physical'' \cite{landauerThereAreNo1991}
 \item Topologically degenerate degree of freedom sees not local perturbation
@@ -176,7 +181,7 @@ error.
 
 
 \section{Bibliography}
-\label{sec:orged326fc}
+\label{sec:org2e54c0a}
 \begin{frame}[allowframebreaks]{References}
 \bibliographystyle{apalike}
 \bibliography{finalp}
