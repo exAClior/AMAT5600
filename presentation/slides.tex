@@ -1,4 +1,4 @@
-% Created 2023-05-07 Sun 15:11
+% Created 2023-05-08 Mon 18:17
 % Intended LaTeX compiler: pdflatex
 \documentclass[presentation]{beamer}
 \usepackage[utf8]{inputenc}
@@ -20,11 +20,11 @@
 \usefonttheme{professionalfonts}
 \author{Yusheng Zhao}
 \date{2023-05-10}
-\title{Topological Order and Noise}
-\subtitle{Emergence of Majorana Zero Mode}
+\title{Physics behind Computation}
+\subtitle{Topological protection from decoherence}
 \hypersetup{
  pdfauthor={Yusheng Zhao},
- pdftitle={Topological Order and Noise},
+ pdftitle={Physics behind Computation},
  pdfkeywords={},
  pdfsubject={AMAT 5600 Final Presentation},
  pdfcreator={Emacs 28.2 (Org mode 9.6.1)}, 
@@ -38,12 +38,25 @@
 
 
 \section{Motivation}
-\label{sec:org35a95c8}
-\begin{frame}[label={sec:orgb9c9ff7}]{Noise in Quantum Computer}
+\label{sec:org69a3b2c}
+\begin{frame}[label={sec:org0196451}]{What's Quantum Computer}
 \begin{itemize}
+\item \(\ket{\psi} = \alpha \ket{0} + e^{i\theta} \beta \ket{1}\)
+\item Gates are unitary (hence reversible)
 \item Quantum Computing has advantage over Classical
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org83c0e10}]{Noise in Quantum Computer}
+\begin{itemize}
 \item Noise is the archenemy
-\item Solution: store information \alert{non-locally}
+\item Noise is from unwanted local perturbation
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org8dc153a}]{Solution}
+\begin{itemize}
+\item Store information \alert{non-locally}
 \item ``If a physical system were to have quantum topological (necessarily nonlocal)
 degrees of freedom, which were insensitive to local probes, then information
 contained in them would be automatically protected against errors caused by
@@ -67,9 +80,9 @@ be store our information non-locally to alleviate the effect of noise?
 \end{itemize}}
 
 \section{Topological Protection}
-\label{sec:orgf7828b3}
+\label{sec:org6948446}
 
-\begin{frame}[label={sec:org339f94b}]{Topological Invariant}
+\begin{frame}[label={sec:orgc789b92}]{Topological Invariant}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./TopoInvariant.png}
 \end{center} [Prof. Li Slides]
@@ -85,7 +98,7 @@ if one has the ability to alter a system locally, they cannot alter the
 topological invariant number of that system.
 \end{itemize}}
 
-\begin{frame}[label={sec:orgfe83453}]{Topological Degeneracy}
+\begin{frame}[label={sec:org06ffd09}]{Topological Degeneracy}
 \begin{itemize}
 \item Arises from topologically non-trivial phase
 \item Protected from local perturbation
@@ -106,8 +119,8 @@ them.
 \end{itemize}}
 
 \section{Kitaev's Toy Model}
-\label{sec:org494bbcc}
-\begin{frame}[label={sec:orgb494ae1}]{Hamiltonian \cite{kitaevUnpairedMajoranaFermions2001}}
+\label{sec:orgab5d7b8}
+\begin{frame}[label={sec:orgbfee828}]{Hamiltonian \cite{kitaevUnpairedMajoranaFermions2001}}
 \begin{itemize}
 \item \(H = \sum_{n=1}^{N} [- \mu (a^{\dagger}_{n}a_{n}- \frac{1}{2}) - w
   (a^{\dagger}_{n}a_{n+1} + a^{\dagger}_{n+1}a_{n}) + \Delta a_{n}a_{n+1} +
@@ -115,7 +128,7 @@ them.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org5f9005a}]{Emergence of Non-trivial Phase \cite{huangIntroductionMajoranaZero2021}}
+\begin{frame}[label={sec:org94a9933}]{Emergence of Non-trivial Phase \cite{huangIntroductionMajoranaZero2021}}
 \begin{itemize}
 \item \(|\Delta| = w > 0\)
 \item \(a_{n} = \frac{1}{2}(e^{-i \theta /2}\gamma_{2n} +
@@ -127,7 +140,7 @@ them.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org4126ad6}]{A picture is worth a thousand words}
+\begin{frame}[label={sec:org0b8bdaa}]{A picture is worth a thousand words}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./two-phases.png}
 \end{center}
@@ -143,8 +156,8 @@ them.
 \end{itemize}}
 
 \section{Take Home Message}
-\label{sec:org787ec59}
-\begin{frame}[label={sec:org222afca}]{Physics and Computation}
+\label{sec:orgc40ae88}
+\begin{frame}[label={sec:org0454321}]{Physics and Computation}
 \begin{itemize}
 \item ``Information is Physical'' \cite{landauerThereAreNo1991}
 \item Topologically degenerate degree of freedom sees not local perturbation
@@ -163,7 +176,7 @@ error.
 
 
 \section{Bibliography}
-\label{sec:org72cdbc4}
+\label{sec:orged326fc}
 \begin{frame}[allowframebreaks]{References}
 \bibliographystyle{apalike}
 \bibliography{finalp}

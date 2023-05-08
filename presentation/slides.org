@@ -2,8 +2,8 @@
 #+AUTHOR: Yusheng Zhao
 #+EMAIL: yushengzhao2020@outlook.com
 #+DATE: 2023-05-10
-#+TITLE: Topological Order and Noise
-#+SUBTITLE: Emergence of Majorana Zero Mode
+#+TITLE: Physics behind Computation
+#+SUBTITLE: Topological protection from decoherence
 #+Description: AMAT 5600 Final Presentation
 #+BEAMER_THEME: Berlin
 #+BEAMER_FONT_THEME: professionalfonts
@@ -18,10 +18,17 @@
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 
 * Motivation
-** Noise in Quantum Computer
+** What's Quantum Computer
+- \(\ket{\psi} = \alpha \ket{0} + e^{i\theta} \beta \ket{1} \)
+- Gates are unitary (hence reversible)
 - Quantum Computing has advantage over Classical
+
+** Noise in Quantum Computer
 - Noise is the archenemy
-- Solution: store information *non-locally*
+- Noise is from unwanted local perturbation
+
+** Solution
+- Store information *non-locally*
 - "If a physical system were to have quantum topological (necessarily nonlocal)
   degrees of freedom, which were insensitive to local probes, then information
   contained in them would be automatically protected against errors caused by
