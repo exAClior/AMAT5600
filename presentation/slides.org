@@ -2,8 +2,8 @@
 #+AUTHOR: Yusheng Zhao
 #+EMAIL: yushengzhao2020@outlook.com
 #+DATE: 2023-05-10
-#+TITLE: Physics behind Computation
-#+SUBTITLE: Topological protection from decoherence
+#+TITLE: Physics and Computation
+#+SUBTITLE: Topologically protected qubits
 #+Description: AMAT 5600 Final Presentation
 #+BEAMER_THEME: Berlin
 #+BEAMER_FONT_THEME: professionalfonts
@@ -18,45 +18,56 @@
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 
 * Motivation
-** What's Quantum Computer
-- Information encoded on a qubit: \(\ket{\psi} = \alpha \ket{0} + e^{i\theta}
-  \beta \ket{1} \)
-- Operations(gates) are unitary (hence reversible)
-- Quantum Computing has advantage over Classical
+** My interest: Quantum Computer
+- *Motivation*: quantum advantage on some problems
+- How does it differ from classical one?
+  1) Information encoded on a qubit: \(\ket{\psi} = \alpha \ket{0} + e^{i\theta}
+     \beta \ket{1} \)
+  2) \(\ket{0}\) and $\ket{1}$ are usually degrees of freedom of underlying
+     *physical* system
 
 ** Note :B_note:
 :PROPERTIES:
 :BEAMER_env: note
 :END:
-
+- Let me first introduce quantum computer for those who are not familiar
+- Qubit vs Bit
 - Quantum Computers could solve some problems more efficiently compared to
   classical computers. For example, Shor's algorithm is able to factor large
-  integers $N$, in \(\mathcal{O}(log(N)^{2}loglog(N)\) time. Meanwhile, the best
-  known classical algorithm is \(\mathcal{O}(e^{1.9
-  log(N)^{1/3}loglog(N)^{2/3}}\).
+  integers $N$ while providing an exponential speed up compare to classical one.
 
 ** Noise in Quantum Computer
 - Noise is the archenemy
-- Noise is from unwanted local perturbation
+- *Example*: Imp and abucus
+- Caused by unwanted physical interactions
 
-** Solution
-- Store information *non-locally*
-- "If a physical system were to have quantum topological (necessarily nonlocal)
-  degrees of freedom, which were insensitive to local probes, then information
-  contained in them would be automatically protected against errors caused by
-  local interactions with the environment." - A. Kitaev
+\footnotetext{We refer to all noise loosely by decoherence.}
 ** Note :B_note:
 :PROPERTIES:
 :BEAMER_env: note
-:beamer_opt: allowframebreaks
 :END:
 - However, this technology is plagued by noise. Roughly speaking, noise is like
   a little daemon who flips the abucus that you use to do calculation. The
   source of those noise come from unwanted physical interaction. or even badly
   calibrated actions.
-- For the purpose of this talk, we focus on unwanted physical interaciton.
+- Loss of phase: $a^{\dagger}_{j}a_{j} = (1+ i \gamma_{2j-1}\gamma)/2$
+
+** Observation and Solution
+- *Observation*: Physical interactions are local
+- *Proposition*: Design a qubit to store information *non-locally*
+- "If a physical system were to have quantum topological (necessarily nonlocal)
+  degrees of freedom, which were insensitive to local probes, then information
+  contained in them would be automatically protected against errors caused by
+  local interactions with the environment." - A. Kitaev
+
+** Note :B_note:
+:PROPERTIES:
+:BEAMER_env: note
+:beamer_opt: allowframebreaks
+:END:
 - This gives us an idea. Since all known physical interactions are local, could
   be store our information non-locally to alleviate the effect of noise?
+- The following quote of Alexi Kitaev is too good to be missed
 
 * Topological Protection
 
@@ -67,6 +78,9 @@
 :PROPERTIES:
 :BEAMER_env: note
 :END:
+- This is very abstract, can we get a better intuition from what we have learned
+  in class?
+- Consider Topological Invariant
 - Recall our definition of a topological invariant, as previously defined in
   class. Both the Gauss-Bonnet theorem and the calculation of the Berry phase
   require an integral over the entire system. Local information alone is
@@ -75,8 +89,11 @@
   topological invariant number of that system.
 
 ** Topological Degeneracy
+- Defined on low temperature gapped quantum many body system
+- Degenerate ground state emerges after phase transition
 - Arises from topologically non-trivial phase
 - Protected from local perturbation
+- Encode qubit onto these d.o.f
 
 ** Note :B_note:
 :PROPERTIES:
@@ -97,15 +114,18 @@
 - \(H = \sum_{n=1}^{N} [- \mu (a^{\dagger}_{n}a_{n}- \frac{1}{2}) - w
   (a^{\dagger}_{n}a_{n+1} + a^{\dagger}_{n+1}a_{n}) + \Delta a_{n}a_{n+1} +
   \Delta^{*}a^{\dagger}_{n+1}a^{\dagger}_{n})]\)
+- 1D chain of fermions
+- $\mu$: chemical potential
+- $w$: hopping strength
+- $\Delta$: induced superconducting gap
 
 ** Emergence of Non-trivial Phase [[cite:&huangIntroductionMajoranaZero2021]]
 - \( |\Delta| = w > 0\)
 - \(a_{n} = \frac{1}{2}(e^{-i \theta /2}\gamma_{2n} +
-  e^{i\theta/2}\gamma_{2n-1})\), $\gamma$ is the Majorana creation/anhilation operator
-- \(a^{\dagger}_{n} = \frac{1}{2}(e^{i\theta/2}\gamma_{2n} -
-  e^{-i\theta/2}\gamma_{2n-1})\)
+  e^{i\theta/2}\gamma_{2n-1})\)
+- $\gamma$ is the Majorana creation/anhilation operator
 - \(\tilde{a}_{n} = (\gamma_{2n}-i\gamma_{2n+1})/2\)
-- \(H = 2w \sum_{n=1}^{N-1}(\tilde{a}^{\dagger}_{n}\tilde{a}_{n} -1/2)\)
+- *Diagonalize*: \(H = 2w \sum_{n=1}^{N-1}(\tilde{a}^{\dagger}_{n}\tilde{a}_{n} -1/2)\)
 
 ** A picture is worth a thousand words
 [[./two-phases.png]]
@@ -124,6 +144,7 @@
 ** Physics and Computation
 - "Information is Physical" [[cite:&landauerThereAreNo1991]]
 - Topologically degenerate degree of freedom sees not local perturbation
+\footnotetext{*MZM* is not Majorana fermion.}
 
 ** Note :B_note:
 :PROPERTIES:

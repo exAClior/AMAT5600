@@ -1,4 +1,4 @@
-% Created 2023-05-08 Mon 18:21
+% Created 2023-05-10 Wed 10:21
 % Intended LaTeX compiler: pdflatex
 \documentclass[presentation]{beamer}
 \usepackage[utf8]{inputenc}
@@ -20,11 +20,11 @@
 \usefonttheme{professionalfonts}
 \author{Yusheng Zhao}
 \date{2023-05-10}
-\title{Physics behind Computation}
-\subtitle{Topological protection from decoherence}
+\title{Physics and Computation}
+\subtitle{Topologically protected qubits}
 \hypersetup{
  pdfauthor={Yusheng Zhao},
- pdftitle={Physics behind Computation},
+ pdftitle={Physics and Computation},
  pdfkeywords={},
  pdfsubject={AMAT 5600 Final Presentation},
  pdfcreator={Emacs 28.2 (Org mode 9.6.1)}, 
@@ -38,40 +38,37 @@
 
 
 \section{Motivation}
-\label{sec:org7a7ca73}
-\begin{frame}[label={sec:org2a5cad1}]{What's Quantum Computer}
+\label{sec:orge439c6f}
+\begin{frame}[label={sec:org48a6d48}]{My interest: Quantum Computer}
 \begin{itemize}
+\item \alert{Motivation}: quantum advantage on some problems
+\item How does it differ from classical one?
+\begin{enumerate}
 \item Information encoded on a qubit: \(\ket{\psi} = \alpha \ket{0} + e^{i\theta}
-  \beta \ket{1}\)
-\item Operations(gates) are unitary (hence reversible)
-\item Quantum Computing has advantage over Classical
+     \beta \ket{1}\)
+\item \(\ket{0}\) and \(\ket{1}\) are usually degrees of freedom of underlying
+\alert{physical} system
+\end{enumerate}
 \end{itemize}
 \end{frame}
 
 \note{Note
 \begin{itemize}
+\item Let me first introduce quantum computer for those who are not familiar
+\item Qubit vs Bit
 \item Quantum Computers could solve some problems more efficiently compared to
 classical computers. For example, Shor's algorithm is able to factor large
-integers \(N\), in \(\mathcal{O}(log(N)^{2}loglog(N)\) time. Meanwhile, the best
-known classical algorithm is \(\mathcal{O}(e^{1.9
-  log(N)^{1/3}loglog(N)^{2/3}}\).
+integers \(N\) while providing an exponential speed up compare to classical one.
 \end{itemize}}
 
-\begin{frame}[label={sec:org45cc246}]{Noise in Quantum Computer}
+\begin{frame}[label={sec:orgad1512f}]{Noise in Quantum Computer}
 \begin{itemize}
 \item Noise is the archenemy
-\item Noise is from unwanted local perturbation
+\item \alert{Example}: Imp and abucus
+\item Caused by unwanted physical interactions
 \end{itemize}
-\end{frame}
 
-\begin{frame}[label={sec:org11148c2}]{Solution}
-\begin{itemize}
-\item Store information \alert{non-locally}
-\item ``If a physical system were to have quantum topological (necessarily nonlocal)
-degrees of freedom, which were insensitive to local probes, then information
-contained in them would be automatically protected against errors caused by
-local interactions with the environment.'' - A. Kitaev
-\end{itemize}
+\footnotetext{We refer to all noise loosely by decoherence.}
 \end{frame}
 \note{Note
 \begin{itemize}
@@ -79,15 +76,31 @@ local interactions with the environment.'' - A. Kitaev
 a little daemon who flips the abucus that you use to do calculation. The
 source of those noise come from unwanted physical interaction. or even badly
 calibrated actions.
-\item For the purpose of this talk, we focus on unwanted physical interaciton.
+\item Loss of phase: \(a^{\dagger}_{j}a_{j} = (1+ i \gamma_{2j-1}\gamma)/2\)
+\end{itemize}}
+
+\begin{frame}[label={sec:orgd2522a4}]{Observation and Solution}
+\begin{itemize}
+\item \alert{Observation}: Physical interactions are local
+\item \alert{Proposition}: Design a qubit to store information \alert{non-locally}
+\item ``If a physical system were to have quantum topological (necessarily nonlocal)
+degrees of freedom, which were insensitive to local probes, then information
+contained in them would be automatically protected against errors caused by
+local interactions with the environment.'' - A. Kitaev
+\end{itemize}
+\end{frame}
+
+\note{Note
+\begin{itemize}
 \item This gives us an idea. Since all known physical interactions are local, could
 be store our information non-locally to alleviate the effect of noise?
+\item The following quote of Alexi Kitaev is too good to be missed
 \end{itemize}}
 
 \section{Topological Protection}
-\label{sec:org9e028e3}
+\label{sec:org63cd030}
 
-\begin{frame}[label={sec:org3a047e8}]{Topological Invariant}
+\begin{frame}[label={sec:org2e054d2}]{Topological Invariant}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./TopoInvariant.png}
 \end{center} [Prof. Li Slides]
@@ -95,6 +108,9 @@ be store our information non-locally to alleviate the effect of noise?
 
 \note{Note
 \begin{itemize}
+\item This is very abstract, can we get a better intuition from what we have learned
+in class?
+\item Consider Topological Invariant
 \item Recall our definition of a topological invariant, as previously defined in
 class. Both the Gauss-Bonnet theorem and the calculation of the Berry phase
 require an integral over the entire system. Local information alone is
@@ -103,10 +119,13 @@ if one has the ability to alter a system locally, they cannot alter the
 topological invariant number of that system.
 \end{itemize}}
 
-\begin{frame}[label={sec:org6b31504}]{Topological Degeneracy}
+\begin{frame}[label={sec:org69dd94c}]{Topological Degeneracy}
 \begin{itemize}
+\item Defined on low temperature gapped quantum many body system
+\item Degenerate ground state emerges after phase transition
 \item Arises from topologically non-trivial phase
 \item Protected from local perturbation
+\item Encode qubit onto these d.o.f
 \end{itemize}
 \end{frame}
 
@@ -124,28 +143,31 @@ them.
 \end{itemize}}
 
 \section{Kitaev's Toy Model}
-\label{sec:org5bca09c}
-\begin{frame}[label={sec:org87dcd0e}]{Hamiltonian \cite{kitaevUnpairedMajoranaFermions2001}}
+\label{sec:org77c79a6}
+\begin{frame}[label={sec:org1238688}]{Hamiltonian \cite{kitaevUnpairedMajoranaFermions2001}}
 \begin{itemize}
 \item \(H = \sum_{n=1}^{N} [- \mu (a^{\dagger}_{n}a_{n}- \frac{1}{2}) - w
   (a^{\dagger}_{n}a_{n+1} + a^{\dagger}_{n+1}a_{n}) + \Delta a_{n}a_{n+1} +
   \Delta^{*}a^{\dagger}_{n+1}a^{\dagger}_{n})]\)
+\item 1D chain of fermions
+\item \(\mu\): chemical potential
+\item \(w\): hopping strength
+\item \(\Delta\): induced superconducting gap
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgc860112}]{Emergence of Non-trivial Phase \cite{huangIntroductionMajoranaZero2021}}
+\begin{frame}[label={sec:org0d1330a}]{Emergence of Non-trivial Phase \cite{huangIntroductionMajoranaZero2021}}
 \begin{itemize}
 \item \(|\Delta| = w > 0\)
 \item \(a_{n} = \frac{1}{2}(e^{-i \theta /2}\gamma_{2n} +
-  e^{i\theta/2}\gamma_{2n-1})\), \(\gamma\) is the Majorana creation/anhilation operator
-\item \(a^{\dagger}_{n} = \frac{1}{2}(e^{i\theta/2}\gamma_{2n} -
-  e^{-i\theta/2}\gamma_{2n-1})\)
+  e^{i\theta/2}\gamma_{2n-1})\)
+\item \(\gamma\) is the Majorana creation/anhilation operator
 \item \(\tilde{a}_{n} = (\gamma_{2n}-i\gamma_{2n+1})/2\)
-\item \(H = 2w \sum_{n=1}^{N-1}(\tilde{a}^{\dagger}_{n}\tilde{a}_{n} -1/2)\)
+\item \alert{Diagonalize}: \(H = 2w \sum_{n=1}^{N-1}(\tilde{a}^{\dagger}_{n}\tilde{a}_{n} -1/2)\)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgebebd8d}]{A picture is worth a thousand words}
+\begin{frame}[label={sec:orgb9a864b}]{A picture is worth a thousand words}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./two-phases.png}
 \end{center}
@@ -161,12 +183,13 @@ them.
 \end{itemize}}
 
 \section{Take Home Message}
-\label{sec:orgdc80415}
-\begin{frame}[label={sec:orgb3dc503}]{Physics and Computation}
+\label{sec:org28e5c75}
+\begin{frame}[label={sec:orgb56f5bc}]{Physics and Computation}
 \begin{itemize}
 \item ``Information is Physical'' \cite{landauerThereAreNo1991}
 \item Topologically degenerate degree of freedom sees not local perturbation
 \end{itemize}
+\footnotetext{*MZM* is not Majorana fermion.}
 \end{frame}
 
 \note{Note
@@ -181,7 +204,7 @@ error.
 
 
 \section{Bibliography}
-\label{sec:org2e54c0a}
+\label{sec:orgb4256f7}
 \begin{frame}[allowframebreaks]{References}
 \bibliographystyle{apalike}
 \bibliography{finalp}
